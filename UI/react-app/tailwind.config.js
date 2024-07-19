@@ -15,20 +15,23 @@ export default {
     colors: {
       'lightTheme-white' : '#FFFFF',
       // 'lightTheme-white' : 'red',
-      'white' : '#FFFF',
+
       'lightTheme-white-light' : '#F9F9F9',
       'lightTheme-text': '#2A2A2A',
       'lightTheme-text-light': '#7D7D7D',
       'darkTheme-dark' : '#181818',
       'darkTheme-dark-light' : '#212121',
       'darkTheme-text' : '#ECECEC',
-      'darkTheme-text-light' : '#CDCDCD',
+      'darkTheme-text-light' : '#B3B3B3',
       'darkTheme-border': '#494949',
       'green': '#10A37F',
-      "blue-light" : "#76D0EB",
-      
+      'link-blue': 'rgb(37 99 235)',
+      'link-purple': 'rgb(67 56 202)',
+      'orange': '#8a4141',
+      'orange-light': '#f75524',
       'transparent' : 'transparent',
-      'inherit':'inherit'
+      'inherit':'inherit',
+      'wheat' : 'wheat'
     },
     
     extend: {
@@ -41,7 +44,8 @@ export default {
       },
       fontFamily: {
         sans: ['ui-sans-serif','-apple-system','system-ui','Segoe UI','Roboto','Ubuntu','Cantarell','Noto Sans','sans-serif','Helvetica','Apple Color Emoji','Arial','Segoe UI Emoji','Segoe UI Symbol'],
-        // serif: ['Merriweather', 'serif'],
+        serif: ['ui-serif', 'Georgia, Cambria', "Times New Roman", 'Times', 'serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace']
       },
     }
   },

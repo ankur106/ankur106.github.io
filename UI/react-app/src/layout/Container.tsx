@@ -3,6 +3,7 @@ import { content } from "../healpers/screens.const";
 import { SCREENS_ENUM } from "../healpers/util.model";
 // import { Footer } from "../content/Footer/Footer";
 import { Header } from "../content/Header/Header";
+import { InView } from "react-intersection-observer";
 
 function Container() {
 
@@ -11,8 +12,9 @@ function Container() {
     isSystemDarkTheme.addEventListener('change', e => e.matches ? toggleDarkMode(true) : toggleDarkMode(false));
     const [darkMode, toggleDarkMode] = useState<boolean>(isSystemDarkTheme.matches);
 
+    const [activeSection, setActiveSection] = useState<String>("Intro");
+
     const toggleDarkModeFn = () =>{
-        console.log("here");
         toggleDarkMode(e => !e);
     }
 
@@ -20,22 +22,21 @@ function Container() {
     const mapAllScreens: ReactNode = content.map((screen) => {
         const ScreenComponent = screen[SCREENS_ENUM.COMPONENT];
         return (
-            <div id={screen[SCREENS_ENUM.SCREEN_NAME] as string}
-                key={screen[SCREENS_ENUM.SCREEN_NAME]}
-                className="w-full">
+            <InView as="div"  threshold = {0.6} id={screen[SCREENS_ENUM.SCREEN_NAME] as string}
+                key={screen[SCREENS_ENUM.SCREEN_NAME]} onChange={() => {setActiveSection(screen[SCREENS_ENUM.SCREEN_NAME] as string)}}>
                 <ScreenComponent />
-            </div>
+            </InView>
         );
     });
 
     return (
-        <div className={`font-sans w-screen h-screen ${darkMode && 'dark'} `}>
-            <div className="h-full w-full  bg-lightTheme-white text-lightTheme-text dark:darkTheme-dark-light dark:text-darkTheme-text flex">
+        <div className={`font-sans w-screen h-screen ${darkMode && 'dark'}`}>
+            <div className="h-full w-full  bg-lightTheme-white text-lightTheme-text dark:bg-darkTheme-dark-light dark:text-darkTheme-text flex">
 
-                <Header onThemeToggle={toggleDarkModeFn}/>
+                <Header onThemeToggle={toggleDarkModeFn} activeSection={activeSection}/>
 
-                <div className="w-full h-full overflow-x-hidden overflow-y-scroll">
-                    <div className='profile-container w-full h-full'>{mapAllScreens}</div>
+                <div >
+                    <div className='profile-container w-screen h-screen overflow-x-hidden overflow-y-scroll'>{mapAllScreens}</div>
 
                     <div className="absolute bottom-0 w-full">
                     {/* <Footer /> */}

@@ -9,78 +9,68 @@ export const Intro: React.FC = () => {
     return (
         <div className="text-white dark:text-darkTheme-text w-full h-screen intro-container flex relative items-center text-center justify-center" id='Home'>
 
-            {/* <div className="profile-parent"> */}
-            <div className="profile-details">
+            <div className="profile-details flex flex-col w-[70%] p-[20px] opacity-75 items-center">
 
-                <div className="profile-details-name">
-                    <span className="primary-text">
-                        {" "}
-                        Hello, I'm{" "}
+                <div className="profile-details-name max-w-[250px] min-w-[250px]">
+                    <span className="primary-text font-serif">
                         <span className="highlighted-text">Ankur Patel</span>
                     </span>
                 </div>
-                <div className="profile-details-role">
-                    <span className="primary-text">
+                <div className="profile-details-role flex flec-col my-[20px]  max-w-[500px] min-w-[500px]">
+                    <span className="primary-text font-mono">
                         <h1>
                             {" "}
                             <TypeAnimation
 
                                 sequence={[
-                                    "Software Developer 💻",
+                                    "I'm a Software Developer 💻",
                                     500,
-                                    "Frontend Developer 💯",
+                                    "I'm a Frontend Developer 💯",
                                     500,
-                                    "Backend Developer ⚒️",
+                                    "I'm a Backend Developer ⚒️",
                                     500,
-                                    "Gen AI Enthusiast 🧠",
+                                    "I'm a Gen AI Enthusiast 🧠",
                                     500,
-                                    "Cloud Engineer 🤖",
+                                    "I'm a Cloud Engineer 🤖",
                                     500,
                                 ]}
                                 repeat={Infinity}
                             />
                         </h1>
-                        {/* <span className="profile-role-tagline">
-                                    Unleashing Innovation with Code!
-                                </span> */}
                     </span>
                 </div>
-                <div className="colz text-center flex justify-center py-5 column-5 gap-x-4">
+                <div className=" text-center flex justify-center py-5 column-5 gap-x-4 max-w-[250px] min-w-[250px]">
                     <a href="https://github.com/ankur106" target="_blank" className="transition duration-300 transform hover:scale-110">
-                        <FaGithub size="25px" />
+                        <FaGithub size="25px" color='white' />
                     </a>
                     <a href="https://www.linkedin.com/in/ankur-patel106/" target="_blank" className="transition duration-300 transform hover:scale-110">
                         <AiFillLinkedin color="#0966C2" size="25px" />
                     </a>
                     <a href="https://leetcode.com/u/Ankur_Patel/" target="_blank" className="transition duration-300 transform hover:scale-110">
-                        <SiLeetcode size="25px" />
+                        <SiLeetcode size="25px"  color='white'/>
                     </a>
                     <a href="https://medium.com/@ankurnpatel106" target="_blank" className="transition duration-300 transform hover:scale-110">
-                        <FaMedium size="25px" />
+                        <FaMedium size="25px" color='white'/>
                     </a>
                     <a href="https://x.com/Ankur_patel1" target="_blank" className="transition duration-300 transform hover:scale-110">
-                        <RiTwitterXLine size="25px" />
+                        <RiTwitterXLine size="25px" color='white'/>
                     </a>
 
 
 
 
                 </div>
-                <div className="profile-options">
-                    {/* <button className="btn primary-btn" onClick={() => scrollService.scrollHandler.scrollToHireMe()}>
-                                {""}
-                                Hire Me{""}
-                                </button> */}
+                {/* <div className="profile-options text-lightTheme-white dark:text-lightTheme-white">
+                    
                     <a href="Ankur_Patel_Resume_AI.pdf" target="_blank">
-                        <button className="p-2 bg-green rounded-md text-white transition duration-300 transform hover:scale-90">Show Resume</button>
+                        <button className="p-2 bg-orange-light rounded-md transition duration-300 transform hover:scale-9 relative z-10">Show Resume</button>
                     </a>
-                </div>
+                </div> */}
             </div>
             <div className="profile-picture">
                 <div className="profile-picture-background">
                 </div>
             </div>
-            {/* </div> */}
 
         </div>
     );
