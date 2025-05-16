@@ -1,20 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: 'standalone',
+  basePath: '',
+  assetPrefix: '',
   images: {
     unoptimized: true,
     domains: ['localhost'],
   },
-  basePath: '',
-  assetPrefix: '',
   webpack(config) {
     config.resolve.fallback = {
       fs: false,
-      net: false,
-      tls: false,
     };
     return config;
   },
+  trailingSlash: true,
 }
 
 module.exports = nextConfig

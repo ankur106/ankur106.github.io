@@ -2,13 +2,14 @@
   "name": "web-cv",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ankur106.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export",
-    "deploy": "npm run export && gh-pages -d out"
+    "export": "next build",
+    "deploy": "npm run export && mkdir -p dist && cp -r .next/* dist/ && git add dist && git commit -m 'Deploy to GitHub Pages' && git push -f origin master"
   },
   "dependencies": {
     "@apollo/server": "^4.10.2",
