@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  output: 'export',
   basePath: '',
   assetPrefix: '',
   images: {
@@ -14,6 +14,10 @@ const nextConfig = {
     return config;
   },
   trailingSlash: true,
+  experimental: {
+    outputStandalone: true,
+  },
+  generateStaticParams: true,
 }
 
 module.exports = nextConfig
